@@ -1,0 +1,31 @@
+var readlineSync = require("readline-sync");
+
+var score = 0;
+
+var userName = readlineSync.question("what is your name? ");
+console.log('welcome to the game ' + userName);
+
+
+function play(question,answer){
+  varAnswer = readlineSync.question(question);
+  if(varAnswer === answer){
+    console.log( "you are right")
+    score++;
+  }else {
+    console.log("you are wrong")
+  }
+  console.log("youre score is ", score)
+  console.log("-----")
+}
+
+var totalQuestion = [{
+  question: "which college does yogesh studied? ",
+  answer: "psna"
+},{
+  question: "which department does yogesh studied?",
+  answer: "ece"
+}]
+
+for (var i=0; i<totalQuestion.length; i++){
+   play(totalQuestion[i].question, totalQuestion[i].answer)
+}
